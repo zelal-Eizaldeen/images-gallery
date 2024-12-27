@@ -10,16 +10,13 @@ services:
       - ./frontend:/home/node/app
     environment:
       - CHOKIDAR_USEPOLLING=true
-
   api:
     restart: always
-    build: ./api:/app
+    build: ./api
     ports:
       - '5050:5050'
     volumes:
       - ./api:/app
-  
-
   mongo:
     image: mongo
     restart: always
