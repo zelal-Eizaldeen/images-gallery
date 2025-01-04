@@ -38,27 +38,16 @@ const App = () => {
   };
 
   const handleDeleteImage = async (id) => {
-    const imageToBeDeleted = images.find((image) => image.id === id);
-    imageToBeDeleted.deleted = true;
+    // const imageToBeDeleted = images.find((image) => image.id === id);
+    // imageToBeDeleted.deleted = true;
     try {
-      const res = await axios.delete(
-        `${API_URL}/images/${id}`,
-        imageToBeDeleted,
-      );
-      setImages(images.filter((image) => image.id !== id));
-
-      if (res.data?.inserted_id) {
-        setImages(
-          images.map((image) =>
-            image.id === id ? { ...image, deleted: true } : image,
-          ),
-        );
+      const res = await axios.delete(`${API_URL}/images/${id}`);
+      if (res.data?.deleted_id) {
+        setImages(images.filter((image) => image.id !== id));
       }
     } catch (error) {
       console.log(error);
     }
-
-    // setImages(images.filter((image) => image.id !== id));
   };
 
   const handleSaveImage = async (id) => {
