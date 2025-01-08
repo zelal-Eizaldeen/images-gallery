@@ -16,7 +16,8 @@ primary_region = 'fra'
   min_machines_running = 0
   processes = ['app']
 
-
+[env]
+  API_URL = "https://images-gallery.fly.dev/"
 
 
 [[vm]]
