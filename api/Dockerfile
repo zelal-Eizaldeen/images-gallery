@@ -2,7 +2,7 @@ FROM python:3.12
 
 WORKDIR /app
 
-# EXPOSE 5050
+EXPOSE 5050
 
 COPY Pipfile Pipfile.lock ./
 
@@ -12,5 +12,5 @@ RUN pip install -r requirements.txt
 
 COPY . ./
 
-# CMD ["python", "main.py"]
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "api.main.py:app"]
+CMD ["python", "main.py"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:80", "api.main.py:app"]
