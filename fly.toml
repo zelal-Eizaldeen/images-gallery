@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for images-gallery on 2025-01-08T08:17:01Z
+# fly.toml app configuration file generated for images-gallery on 2025-01-08T08:38:08Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -15,9 +15,6 @@ primary_region = 'fra'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
-
-
-
 
 [[vm]]
   memory = '1gb'
