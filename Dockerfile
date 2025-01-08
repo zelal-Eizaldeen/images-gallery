@@ -23,13 +23,14 @@ EXPOSE 5050
 
 COPY api/Pipfile api/Pipfile.lock ./
 
-RUN python -m pip install --upgrade pip
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir --upgrade pipenv uvicorn
+# RUN pip install --no-cache-dir --upgrade pipenv uvicorn
+RUN pip install --no-cache-dir --upgrade pipenv 
+
 RUN pipenv requirements  > requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . ./
 
-# CMD ["python", "main.py"]
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "api.main.py:app"]
+CMD ["python", "main.py"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:80", "api.main.py:app"]
