@@ -16,8 +16,7 @@ primary_region = 'fra'
   min_machines_running = 0
   processes = ['app']
 
-[env]
-  UNSPLASH_KEY=CLd2VLBqBTqxqccQQpvlE9XgKYZ4nJkQMYMqbaMwIz8
+
 
 
 [[vm]]
